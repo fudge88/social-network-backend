@@ -1,4 +1,6 @@
 const express = require("express");
+const mongoose = require("mongoose");
+
 const routes = require("./routes");
 
 const PORT = process.env.PORT || 4000;
@@ -10,9 +12,16 @@ app.use(express.urlencoded({ extended: true }));
 app.use(routes);
 
 const init = async () => {
-  app.listen(PORT, () =>
-    console.log(`server running on http://localhost:${PORT}`)
-  );
+  try {
+    await mongoose.connect("mongodb://localhost:27017/socialNetworkDb");
+    console.log("[INFO]: Database connection successful");
+
+    app.listen(PORT, () =>
+      console.log(`server running on http://localhost:${PORT}`)
+    );
+  } catch (error) {
+    console.log(`[INFO]: Database connection failed | ${error.message}`);
+  }
 };
 
 init();
