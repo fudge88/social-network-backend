@@ -13,14 +13,18 @@ app.use(routes);
 
 const init = async () => {
   try {
-    await mongoose.connect("mongodb://localhost:27017/socialNetworkDb");
+    await mongoose.connect("mongodb://localhost:27017/socialNetworkDb", {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+
     console.log("[INFO]: Database connection successful");
 
     app.listen(PORT, () =>
-      console.log(`server running on http://localhost:${PORT}`)
+      console.log(` Server running on http://localhost:${PORT}`)
     );
   } catch (error) {
-    console.log(`[INFO]: Database connection failed | ${error.message}`);
+    console.log(`[ERROR]: Database connection failed | ${error.message}`);
   }
 };
 

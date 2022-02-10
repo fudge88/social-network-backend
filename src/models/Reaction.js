@@ -4,6 +4,7 @@ const reactionSchema = {
   reactionId: {
     type: Schema.Types.ObjectId,
     default: () => new Types.ObjectId(),
+    auto: true,
   },
   reactionBody: {
     type: String,
@@ -20,6 +21,11 @@ const reactionSchema = {
   },
 };
 
-const schema = new Schema(reactionSchema);
+const schema = new Schema(reactionSchema{
+  toJSON: {
+    getters: true,
+  },
+  id: false,
+});
 
 module.exports = schema;

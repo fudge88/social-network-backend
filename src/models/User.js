@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 const userSchema = {
-  username: {
+  userName: {
     type: String,
     required: true,
     unique: true,
@@ -11,7 +11,6 @@ const userSchema = {
     type: String,
     required: true,
     unique: true,
-    validate: [validateEmail, "Please fill a valid email address"],
     match: [
       /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
       "Please fill a valid email address",
@@ -32,6 +31,10 @@ const userSchema = {
 };
 
 const schema = new Schema(userSchema);
+
+schema.virtual("friendCount").get(function () {
+  return this.friends.length;
+});
 
 const User = model("user", schema);
 
