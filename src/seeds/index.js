@@ -24,7 +24,7 @@ const init = async () => {
 
     console.log("[INFO]: successfully seeded thoughts");
 
-    await mongoose.disconnect();
+    // await mongoose.disconnect();
   } catch (error) {
     console.log(`[INFO]: Database connection failed | ${error.message}`);
   }
