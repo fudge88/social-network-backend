@@ -1,11 +1,19 @@
 const thoughts = [
   {
-    thoughtText: "Awesome idea",
+    thoughtText: "Rubbish idea",
     userName: "bobSmith",
     reactions: [
       {
-        reactionBody: "Poo",
+        reactionBody: "Ermmm",
         userName: "jackSmith",
+      },
+      {
+        reactionBody: "Phew!",
+        userName: "tinaParks",
+      },
+      {
+        reactionBody: "Poo",
+        userName: "WillSmith",
       },
     ],
   },
@@ -14,18 +22,34 @@ const thoughts = [
     userName: "bobSmith",
     reactions: [
       {
-        reactionBody: "Poo",
+        reactionBody: "WOOHOO",
         userName: "jackSmith",
+      },
+      {
+        reactionBody: "LOL",
+        userName: "lukeCrosby",
       },
     ],
   },
   {
-    thoughtText: "Awesome idea",
+    thoughtText: "Great idea",
     userName: "bobSmith",
     reactions: [
       {
-        reactionBody: "Poo",
+        reactionBody: "Amazing",
         userName: "jackSmith",
+      },
+      {
+        reactionBody: "Glorious",
+        userName: "aminaShah",
+      },
+      {
+        reactionBody: "Smashed It!",
+        userName: "lukeCrosby",
+      },
+      {
+        reactionBody: "WOW",
+        userName: "tinaSmith",
       },
     ],
   },

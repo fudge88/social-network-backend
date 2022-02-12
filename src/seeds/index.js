@@ -14,17 +14,48 @@ const init = async () => {
 
     console.log("[INFO]: Database connection successful");
 
-    User.deleteMany({});
-    User.insertMany(users);
+    await User.deleteMany({});
+    await User.insertMany(users);
 
     console.log("[INFO]: Successfully seeded users");
 
-    Thought.deleteMany({});
-    Thought.insertMany(thoughts);
+    await Thought.deleteMany({});
+    await Thought.insertMany(thoughts);
 
     console.log("[INFO]: successfully seeded thoughts");
 
-    // await mongoose.disconnect();
+    const thoughtsFromDb = await Thought.find({});
+    const usersFromDb = await User.find({});
+
+    // map through thoughts; link thought to specific user
+    const promises = thoughtsFromDb.map(async (thought) => {
+      //get each thought's username
+      const username = thought.userName;
+      //find user in userDB where thought userId matches user id
+      const user = usersFromDb.find((user) => user.userName === username);
+      user.thoughts.push(thought._id.toString());
+      await User.findByIdAndUpdate(user._id, { ...user });
+    });
+
+    const friendsPromises = usersFromDb.map(async (user) => {
+      const userId = user._id.toString();
+      console.log(userId);
+      const allUsers = usersFromDb.filter(
+        (currentUser) => currentUser.userName !== user.userName
+      );
+      console.log(allUsers);
+      const randomFriend =
+        allUsers[Math.floor(Math.random() * allUsers.length)];
+
+      console.log(randomFriend);
+      user.friends.push(randomFriend._id);
+      await User.findByIdAndUpdate(userId, { ...user });
+    });
+
+    await Promise.all(promises);
+    await Promise.all(friendsPromises);
+
+    await mongoose.disconnect();
   } catch (error) {
     console.log(`[INFO]: Database connection failed | ${error.message}`);
   }
