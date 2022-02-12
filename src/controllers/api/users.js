@@ -52,7 +52,7 @@ const updateUserById = async (req, res) => {
       userName,
       email,
     }).populate("thoughts");
-    return res.json({ success: true, message: "Successfully updated" });
+    return res.json({ success: true, data: user });
   } catch (error) {
     console.log(`[ERROR]: Failed to get user | ${error.message}`);
     return res

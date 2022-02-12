@@ -27,11 +27,8 @@ const init = async () => {
     const thoughtsFromDb = await Thought.find({});
     const usersFromDb = await User.find({});
 
-    // map through thoughts; link thought to specific user
     const promises = thoughtsFromDb.map(async (thought) => {
-      //get each thought's username
       const username = thought.userName;
-      //find user in userDB where thought userId matches user id
       const user = usersFromDb.find((user) => user.userName === username);
       user.thoughts.push(thought._id.toString());
       await User.findByIdAndUpdate(user._id, { ...user });
