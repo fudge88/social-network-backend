@@ -1,55 +1,43 @@
 const thoughts = [
   {
-    thoughtText: "Rubbish idea",
-    userName: "bobSmith",
+    thoughtText: "What’s the best thing about Switzerland?",
+    userName: "Kevin",
     reactions: [
       {
-        reactionBody: "Ermmm",
-        userName: "jackSmith",
-      },
-      {
-        reactionBody: "Phew!",
-        userName: "tinaParks",
-      },
-      {
-        reactionBody: "Poo",
-        userName: "WillSmith",
+        reactionBody: "I don’t know, but the flag is a big plus.",
+        userName: "Gru",
       },
     ],
   },
   {
-    thoughtText: "Awesome idea",
-    userName: "bobSmith",
+    thoughtText: "I Invented a new word- Plagiarism.",
+    userName: "Stuart",
     reactions: [
       {
-        reactionBody: "WOOHOO",
-        userName: "jackSmith",
+        reactionBody: "LOL you're so funny!",
+        userName: "Kevin",
       },
       {
-        reactionBody: "LOL",
-        userName: "lukeCrosby",
+        reactionBody: "Oh the irony",
+        userName: "Gru",
       },
     ],
   },
   {
-    thoughtText: "Great idea",
-    userName: "bobSmith",
+    thoughtText: "Did you hear about the claustrophobic astronaut?",
+    userName: "Bob",
     reactions: [
       {
-        reactionBody: "Amazing",
-        userName: "jackSmith",
+        reactionBody: "Did he just needed a little space?",
+        userName: "Stuart",
       },
       {
-        reactionBody: "Glorious",
-        userName: "aminaShah",
+        reactionBody: "Good one Stuart!",
+        userName: "Kevin",
       },
       {
-        reactionBody: "Smashed It!",
-        userName: "lukeCrosby",
-      },
-      {
-        reactionBody: "WOW",
-        userName: "tinaSmith",
+        reactionBody: "Was he looking for a mars-bar?",
+        userName: "Gru",
       },
     ],
   },
