@@ -2,8 +2,8 @@ const { Thought } = require("../../models");
 
 const getThoughts = async (req, res) => {
   try {
-    const thoughts = await Thought.find({});
-    return res.json({ success: true, data: thoughts });
+    const data = await Thought.find({});
+    return res.json({ success: true, data });
   } catch (error) {
     console.log(`[ERROR]: Failed to get thoughts | ${error.message}`);
     return res
@@ -15,8 +15,8 @@ const getThoughts = async (req, res) => {
 const getThoughtById = async (req, res) => {
   try {
     const { thoughtId } = req.params;
-    const thoughts = await Thought.findById(thoughtId);
-    return res.json({ success: true, data: thoughts });
+    const data = await Thought.findById(thoughtId);
+    return res.json({ success: true, data });
   } catch (error) {
     console.log(`[ERROR]: Failed to get thought | ${error.message}`);
     return res
@@ -29,8 +29,8 @@ const createThought = async (req, res) => {
   try {
     const { userName, thoughtText } = req.body;
     if (userName && thoughtText) {
-      const newThought = await Thought.create({ userName, thoughtText });
-      return res.json({ success: true, data: newThought });
+      const data = await Thought.create({ userName, thoughtText });
+      return res.json({ success: true, data });
     }
     return res.status(400).json({
       success: false,
@@ -47,17 +47,19 @@ const createThought = async (req, res) => {
 const updateThoughtById = async (req, res) => {
   try {
     const { thoughtId } = req.params;
-    const { userName, thoughtText } = req.body;
-    const thought = await Thought.findByIdAndUpdate(thoughtId, {
-      userName,
-      thoughtText,
-    });
-    return res.json({ success: true, data: thought });
+    const data = await Thought.findByIdAndUpdate(
+      thoughtId,
+      {
+        ...req.body,
+      },
+      { new: true }
+    );
+    return res.json({ success: true, data });
   } catch (error) {
-    console.log(`[ERROR]: Failed to get thought | ${error.message}`);
+    console.log(`[ERROR]: Failed to update thought | ${error.message}`);
     return res
       .status(500)
-      .json({ success: false, error: "Failed to get thought" });
+      .json({ success: false, error: "Failed to update thought" });
   }
 };
 

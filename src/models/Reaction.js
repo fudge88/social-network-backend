@@ -3,11 +3,6 @@ const { Schema, Types } = require("mongoose");
 const { formatTime } = require("../utils");
 
 const reactionSchema = {
-  reactionId: {
-    type: Schema.Types.ObjectId,
-    // default: () => new Types.ObjectId(),
-    auto: true,
-  },
   reactionBody: {
     type: String,
     required: true,
