@@ -1,5 +1,7 @@
 const { Schema, Types } = require("mongoose");
 
+const { formatTime } = require("../utils");
+
 const reactionSchema = {
   reactionId: {
     type: Schema.Types.ObjectId,
@@ -18,6 +20,7 @@ const reactionSchema = {
   createdAt: {
     type: Date,
     default: Date.now(),
+    get: formatTime,
   },
 };
 
