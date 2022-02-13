@@ -1,0 +1,316 @@
+{
+  "info": {
+    "_postman_id": "e21a2c57-0ffa-46d3-9ce5-9a9e96164979",
+    "name": "socialNetwork",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "users",
+      "item": [
+        {
+          "name": "users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4000/api/users",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "users"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "user",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4000/api/users/62083b90704908029cff4c4c",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "users", "62083b90704908029cff4c4c"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "user",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": " {\r\n    \"userName\": \"mohammed\",\r\n    \"email\": \"mohammed@email.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/api/users",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "users"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "user",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": " {\r\n    \"userName\": \"shahKhan\",\r\n    \"email\": \"shahKhan@email.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/api/users/620925e8b5e799abce3a24ad",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "users", "620925e8b5e799abce3a24ad"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "user",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4000/api/users/620925e8b5e799abce3a24ad",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "users", "620925e8b5e799abce3a24ad"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "thoughts",
+      "item": [
+        {
+          "name": "thoughts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4000/api/thoughts",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "thoughts"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "thought",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4000/api/thoughts/62083b90704908029cff4c51",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "thoughts", "62083b90704908029cff4c51"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "thought",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": " {\r\n    \"userName\": \"lolaKing\",\r\n    \"thoughtText\": \"stay hydrated\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/api/thoughts/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "thoughts", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "thought",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": " {\r\n    \"userName\": \"rumi\",\r\n    \"thoughtText\": \"stay calm and carry on\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/api/thoughts/6209268a46b6140431b6a6ca",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "thoughts", "6209268a46b6140431b6a6ca"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "thought",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4000/api/thoughts/620921632239874e30d3aeba",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": ["api", "thoughts", "620921632239874e30d3aeba"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "reactions",
+      "item": [
+        {
+          "name": "reaction",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": " {\r\n    \"userName\": \"stuartLittle\",\r\n    \"reactionBody\": \"sfdgh\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/api/thoughts/6209264984b15828297d249b/reactions",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": [
+                "api",
+                "thoughts",
+                "6209264984b15828297d249b",
+                "reactions"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "reaction",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4000/api/thoughts/6209264984b15828297d249b/reactions/620928b045cd0212bc5ecaad",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": [
+                "api",
+                "thoughts",
+                "6209264984b15828297d249b",
+                "reactions",
+                "620928b045cd0212bc5ecaad"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "friends",
+      "item": [
+        {
+          "name": "friend",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"_id\": \"6209264984b15828297d2496\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4000/api/users/62092963007d4fc88d793fef/friends/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": [
+                "api",
+                "users",
+                "62092963007d4fc88d793fef",
+                "friends",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "friend",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4000/api/users/62092963007d4fc88d793fef/friends/6209264984b15828297d2496",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4000",
+              "path": [
+                "api",
+                "users",
+                "62092963007d4fc88d793fef",
+                "friends",
+                "6209264984b15828297d2496"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
