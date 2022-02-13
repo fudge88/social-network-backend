@@ -30,8 +30,6 @@ const createReactionForThought = async (req, res) => {
 const deleteReactionByThought = async (req, res) => {
   try {
     const { thoughtId, reactionId } = req.params;
-
-    console.log(thoughtId, reactionId);
     const data = await Thought.findByIdAndUpdate(
       thoughtId,
       {
