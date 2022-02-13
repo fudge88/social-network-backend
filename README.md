@@ -4,7 +4,7 @@
 
 A back-end application from scratch to manage a users, thoughts friends and reactions ina NoSQL database, using Node, Express, a MongoDB database, and the Mongoose ODM.
 
-![portfolio demo](./img/et-demo.gif)
+![portfolio demo](./img/postman.gif)
 
 ## Summary
 
@@ -12,9 +12,7 @@ An application that creates, updates and deletes users, and their thoughts which
 
 This application is a backend server for a social network, which allows users to become friends, post thoughts, where other users including themselves are able to react to thoughts.
 
-#### A walk-though video for the app can be viewed [here.](https://drive.google.com/drive/folders/1DLdF3_-PX2UVMxI8HHDnODS5KMSh4j8a?usp=sharing)
-
-![portfolio demo](./img/employeeTracker.png)
+#### A walk-though video for the app can be viewed [here.](https://drive.google.com/drive/folders/1moF1qagp5ExPP1qPOcAPgIrHzExIlm4i?usp=sharing)
 
 ## User Story
 
@@ -71,8 +69,6 @@ npm run start
 ```
 
 This should start the application, and you will be be able to create requests on `Postman`.
-
-![portfolio demo](./img/employeeTracker1.png)
 
 ## Tools Used:
 

@@ -36,15 +36,12 @@ const init = async () => {
 
     const friendsPromises = usersFromDb.map(async (user) => {
       const userId = user._id.toString();
-      console.log(userId);
       const allUsers = usersFromDb.filter(
         (currentUser) => currentUser.userName !== user.userName
       );
-      console.log(allUsers);
       const randomFriend =
         allUsers[Math.floor(Math.random() * allUsers.length)];
 
-      console.log(randomFriend);
       user.friends.push(randomFriend._id);
       await User.findByIdAndUpdate(userId, { ...user });
     });
