@@ -23,14 +23,10 @@ const deleteFriendByUser = async (req, res) => {
   try {
     const { userId, friendId } = req.params;
 
-    const data = await User.findByIdAndUpdate(
-      userId,
-      {
-        $pull: { friends: { $in: [friendId] } },
-      },
-      { new: true }
-    );
-    return res.json({ success: true, data });
+    const user = await User.findByIdAndUpdate(userId, {
+      $pull: { friends: friendId },
+    });
+    return res.json({ success: true, data: user });
   } catch (error) {
     console.log(`[ERROR]: Failed to delete friend | ${error.message}`);
     return res
